@@ -9,6 +9,7 @@ from biicode.common.settings.arduinosettings import ArduinoSettings
 from yaml.scanner import ScannerError
 from biicode.common.exception import ConfigurationFileError
 from biicode.common.settings.cmakesettings import CMakeSettings
+from biicode.common.settings.androidsettings import AndroidSettings
 
 
 class UserSettings(dict):
@@ -35,6 +36,8 @@ class Settings(object):
             Specific settings about RPi tools and settings to be used during compilation time.
         arduino: ArduinoSettings
             Specific settings about Arduino tools and settings to be used during compilation time.
+        android: AndroidSettings
+            Specific settings about Android tools and settings to be used during compilation time.
         node: LanguageSettings
             Generic settings about language tools.
         user: UserSettings
@@ -52,6 +55,7 @@ class Settings(object):
         self.cpp = CPPSettings()
         self.rpi = RPiSettings()
         self.arduino = ArduinoSettings()
+        self.android = AndroidSettings()
         self.node = LanguageSettings()
         self.fortran = LanguageSettings()
         self.python = LanguageSettings()
@@ -86,6 +90,7 @@ class Settings(object):
             and self.cpp == other.cpp \
             and self.rpi == other.rpi \
             and self.arduino == other.arduino \
+            and self.android == other.android \
             and self.fortran == other.fortran \
             and self.os == other.os\
             and self.python == other.python \
@@ -100,6 +105,7 @@ class Settings(object):
                     'cpp': ('cpp', CPPSettings, CPPSettings),
                     'rpi': ('rpi', RPiSettings, RPiSettings),
                     'arduino': ('arduino', ArduinoSettings, ArduinoSettings),
+                    'android': ('android', AndroidSettings, AndroidSettings),
                     'fortran': ('fortran', LanguageSettings, LanguageSettings),
                     'python': ('python', LanguageSettings, LanguageSettings),
                     'node': ('node', LanguageSettings, LanguageSettings),

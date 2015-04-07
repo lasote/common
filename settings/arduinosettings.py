@@ -44,9 +44,9 @@ class ArduinoSettings(object):
 
     def __eq__(self, other):
         return self.board == other.board and \
-               self.port == other.port and self.programmer == other.programmer and \
-               self.sdk == other.sdk and self.version == other.version and \
-               self.generator == other.generator and self.automatic_reset == other.automatic_reset
+            self.port == other.port and self.programmer == other.programmer and \
+            self.sdk == other.sdk and self.version == other.version and \
+            self.generator == other.generator and self.automatic_reset == other.automatic_reset
 
     def __ne__(self, other):
         return not self.__eq__(other)
