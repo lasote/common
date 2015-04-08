@@ -61,9 +61,7 @@ class AndroidSettings(object):
     def __eq__(self, other):
         return self.abi == other.abi and \
             self.api_level == other.api_level and self.sdk == other.sdk and \
-            self.sdk == other.sdk and self.version == other.version and \
-            self.ndk == other.ndk and \
-            self.ant == other.ant
+            self.ndk == other.ndk and self.ant == other.ant
 
     def __ne__(self, other):
         return not self.__eq__(other)
